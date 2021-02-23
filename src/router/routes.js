@@ -18,8 +18,13 @@ const routes = [
     children: [
       { path: '', component: () => import('pages/Login') },
       { path: '/register', component: () => import('pages/Register') },
-      { path: '/cart', component: () => import('pages/Cart') }
+      { path: '/cart', component: () => import('pages/Cart') },
+      { path: '/add_product', component: () => import('pages/AddProduct') }
     ]
+  },
+  {
+    path: '/search',
+    component: () => import('layouts/Search')
   },
 
   // Always leave this as last one,

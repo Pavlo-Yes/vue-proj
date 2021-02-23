@@ -14,7 +14,7 @@
           filled
           required
           type="email"
-          v-model="email"
+          v-model="register.email"
           label="Введіть email"
           hint="наприклад: name@mail.com"
           lazy-rules
@@ -29,7 +29,7 @@
           filled
           required
           type="password"
-          v-model="password"
+          v-model="register.password"
           label="Введіть пароль"
           lazy-rules
           :rules="[
@@ -50,6 +50,29 @@
 
 <script>
 export default {
-  // name: 'PageName',
+  name: 'Register',
+  data() {
+    return {
+      register: {
+        email: '',
+        password: ''
+      }
+    }
+  },
+  methods: {
+    onSubmit() {
+      const user = new FormData();
+      const {email, password} = this.register;
+      user.append("email", email);
+      user.append("password", password);
+      console.log(this.register);
+      this.$axios.post('http://127.0.0.1:8000/register_user/', user)
+        .then((response) => {
+          console.log("RESPONSE RECEIVED: ", response);
+        }).catch((error) => {
+        console.log("AXIOS ERROR: ", error);
+      })
+    }
+  }
 }
 </script>

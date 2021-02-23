@@ -1,7 +1,7 @@
 <template>
   <q-layout view="hHh lpr fff">
 
-    <q-header reveal elevated height-hint="98" class="col bg-blue-grey-9 text-amber-8">
+    <q-header reveal bordered height-hint="50" class="col bg-blue-grey-9 text-amber-8">
       <q-toolbar class="q-pt-sm">
         <q-btn flat round dense icon="menu" class="q-mr-md" @click="left = !left"/>
         <q-btn flat round dense icon="search" class="q-mr-xl" size="lg" @click="searchFieldVisible=!searchFieldVisible">
@@ -10,9 +10,9 @@
           </span>
         </q-btn>
 
-        <form @submit.prevent="pressed" v-show=searchFieldVisible class="row q-pt-xs">
+        <form @submit.prevent @submit="search" v-show=searchFieldVisible class="row q-pt-xs">
           <q-input
-            ref="input"
+            v-model="searchRequest"
             filled
             type="search"
             placeholder="пошук"
@@ -25,7 +25,7 @@
           >
           </q-input>
           <div class="search-wrapper">
-            <q-btn type="submit" color="blue-grey-8" label="Шукати" text-color="amber-8"/>
+            <q-btn type="submit" color="blue-grey-8" label="Шукати" text-color="amber-8" to="search"/>
           </div>
         </form>
         <!--          v-model="search"-->
@@ -40,12 +40,19 @@
         </q-btn>
       </q-toolbar>
       <q-toolbar inset>
-        <q-toolbar-title align="center" style="font-size: x-large"><strong>Anastasia Vyt</strong>
+        <q-toolbar-title align="center">
+          <q-btn flat style="font-size: large"
+                 class="cursor"
+                 v-go-back=" '/' "
+                 dense
+          >
+            <strong>Anastasia Vyt</strong>
+          </q-btn>
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
 
-    <q-drawer show-if-above v-model="left" side="left" elevated>
+    <q-drawer show-if-above v-model="left" side="left" overlay behavior="mobile" elevated>
       <!-- drawer content -->
       <q-tabs vertical
               class="text-amber-8 bg-blue-grey-9"
@@ -54,7 +61,7 @@
         <br>
         <br>
         <br>
-        <!--        <q-btn flat round dense class="q-mr-md" size="md" @click="cart++">Add to cart</q-btn>-->
+<!--                <q-btn flat round dense class="q-mr-md" size="md" @click="cart++">Add to cart</q-btn>-->
         <q-route-tab to="/gallery" label="Галерея"/>
         <q-route-tab to="/how_to_buy" label="Як придбати"/>
         <q-route-tab to="/about" label="Про нас"/>
@@ -67,17 +74,17 @@
       <router-view/>
     </q-page-container>
 
-    <q-footer reveal elevated class="bg-blue-grey-9 text-amber-8">
+    <q-footer reveal bordered class="bg-blue-grey-9 text-amber-8">
       <div class="q-pa-sm row justify-center">
         <div class="q-gutter-md material-icons-round" style="font-size: 2em">
 <!--          <q-fab direction="left" label="Ми в соціальних мережах">-->
 <!--            <q-fab-action href="https://www.instagram.com/" target="_blank" icon="fab fa-instagram"/>-->
 <!--            <q-fab-action href="https://www.facebook.com/" target="_blank" icon="fab fa-facebook"/>-->
 <!--          </q-fab>-->
-          <a href="https://www.facebook.com/" target="_blank" rel="nofollow noreferrer noopener">
+          <a href="https://www.facebook.com/anastasiyavyt/" target="_blank" rel="nofollow noreferrer noopener" style="text-decoration: none">
             <q-icon name="fab fa-facebook" class="text-amber-8"/>
           </a>
-          <a href="https://www.instagram.com/" target="_blank" rel="nofollow noreferrer noopener">
+          <a href="https://www.instagram.com/anastasiyavyt/" target="_blank" rel="nofollow noreferrer noopener" style="text-decoration: none">
             <q-icon name="fab fa-instagram" class="text-amber-8"/>
           </a>
           <span style="font-size: large">
@@ -97,12 +104,14 @@ export default {
       left: false,
       isAdmin: false,
       searchFieldVisible: false,
-      cart: 0
+      cart: 0,
+      searchRequest: ''
     }
   },
-  methods: {}
-  // Created () {
-  //   console.log(this.searchFieldVisible)
-  // }
+  methods: {
+    search(){
+      console.log(this.searchRequest);
+    }
+  }
 }
 </script>

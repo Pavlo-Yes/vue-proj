@@ -10,7 +10,14 @@
         />
       </q-toolbar>
       <q-toolbar inset>
-        <q-toolbar-title align="center" style="font-size: x-large"><strong>Anastasia Vyt</strong> Jewelry
+        <q-toolbar-title align="center">
+          <q-btn flat style="font-size: large"
+                 class="cursor"
+                 v-go-back=" '/' "
+                 dense
+          >
+            <strong>Anastasia Vyt</strong>
+          </q-btn>
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
@@ -21,8 +28,14 @@
     <q-footer reveal elevated class="bg-blue-grey-9 text-amber-8">
       <div class="q-pa-sm row justify-center">
         <div class="q-gutter-md material-icons-round" style="font-size: 2em">
-          <q-icon name="facebook"/>
-          <q-icon name="style"/>
+          <a href="https://www.facebook.com/anastasiyavyt/" target="_blank" rel="nofollow noreferrer noopener"
+             style="text-decoration: none">
+            <q-icon name="fab fa-facebook" class="text-amber-8"/>
+          </a>
+          <a href="https://www.instagram.com/anastasiyavyt/" target="_blank" rel="nofollow noreferrer noopener"
+             style="text-decoration: none">
+            <q-icon name="fab fa-instagram" class="text-amber-8"/>
+          </a>
           <span style="font-size: large">
             ©  Anastasia Vyt
           </span>
