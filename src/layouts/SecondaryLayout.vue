@@ -6,17 +6,21 @@
           class="bg-blue-grey-9 text-amber-8 q-mr-xl"
           style="font-weight: bolder"
           v-go-back=" '/' "
-          label="Go Home"
+          icon="arrow_back"
+          label="Home"
+          dense
+          size="sm"
         />
       </q-toolbar>
-      <q-toolbar inset>
+      <q-toolbar>
         <q-toolbar-title align="center">
-          <q-btn flat style="font-size: large"
-                 class="cursor"
-                 v-go-back=" '/' "
-                 dense
+          <q-btn
+            flat
+            style="font-size: 20px"
+            v-go-back=" '/' "
+            dense
           >
-            <strong>Anastasia Vyt</strong>
+            NECKLACE
           </q-btn>
         </q-toolbar-title>
       </q-toolbar>
@@ -28,16 +32,16 @@
     <q-footer reveal elevated class="bg-blue-grey-9 text-amber-8">
       <div class="q-pa-sm row justify-center">
         <div class="q-gutter-md material-icons-round" style="font-size: 2em">
-          <a href="https://www.facebook.com/anastasiyavyt/" target="_blank" rel="nofollow noreferrer noopener"
+          <a href="https://www.facebook.com/jewellery/" target="_blank" rel="nofollow noreferrer noopener"
              style="text-decoration: none">
             <q-icon name="fab fa-facebook" class="text-amber-8"/>
           </a>
-          <a href="https://www.instagram.com/anastasiyavyt/" target="_blank" rel="nofollow noreferrer noopener"
+          <a href="https://www.instagram.com/jewelry/" target="_blank" rel="nofollow noreferrer noopener"
              style="text-decoration: none">
             <q-icon name="fab fa-instagram" class="text-amber-8"/>
           </a>
           <span style="font-size: large">
-            ©  Anastasia Vyt
+            ©  Necklace
           </span>
         </div>
       </div>
@@ -45,7 +49,16 @@
   </q-layout>
 </template>
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      isLogged: false,
+    }
+  },
+  beforeCreate() {
+    this.isLogged = this.$store.getters.getIsLogged;
+  }
+}
 </script>
 
 <style scoped>
