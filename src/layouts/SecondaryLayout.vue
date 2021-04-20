@@ -49,16 +49,7 @@
   </q-layout>
 </template>
 <script>
-export default {
-  data() {
-    return {
-      isLogged: false,
-    }
-  },
-  beforeCreate() {
-    this.isLogged = this.$store.getters.getIsLogged;
-  }
-}
+export default {}
 </script>
 
 <style scoped>

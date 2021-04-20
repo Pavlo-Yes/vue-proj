@@ -20,9 +20,9 @@
           <q-card-actions align="right" style="background-color: #232830; max-height: 50px">
             <q-btn flat round
                    @click="addToCart(product)"
-                   :label="changeBtnOnAddToCart(product).label"
-                   :color="changeBtnOnAddToCart(product).color"
-                   :icon="changeBtnOnAddToCart(product).icon"
+                   label="add to cart"
+                   color="primary"
+                   icon="shopping_cart"
             />
           </q-card-actions>
         </q-card>
@@ -45,9 +45,9 @@ export default {
       this.$addToCart(product)
       this.setItemInCartQuantity()
     },
-    changeBtnOnAddToCart(product) {
-      return this.$changeBtnOnAddToCart(product)
-    },
+    // changeBtnOnAddToCart(product) {
+    //   return this.$changeBtnOnAddToCart(product)
+    // },
     setItemInCartQuantity() {
       this.$root.$emit('cartLength', this.$localstorageGetCart().length);
       this.cartLength = this.$localstorageGetCart().length

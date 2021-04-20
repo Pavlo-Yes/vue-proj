@@ -208,7 +208,7 @@ export default {
                 this.$setTokens(access, refresh);
                 this.$axiosCheckAccessToken()
                   .then(res => {
-                    console.log('second scenario');
+                    // console.log('second scenario');
                     this.$setCurrentUser(res.data);
                     this.currentUser = res.data;
                   })
@@ -233,7 +233,6 @@ export default {
     //initializing cart length
     this.$root.$on('cartLength', dat => {
       this.cartLength = dat;
-      console.log('updated search layout');
     });
     if (this.$localstorageGetCart()) {
       this.cartLength = this.$localstorageGetCart().length;

@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([[10],{"0b18":function(n,e,a){"use strict";a.r(e);var o,t,c=a("2877"),l=a("9989"),p=a("9c40"),s=a("eebe"),u=a.n(s),w={},b=Object(c["a"])(w,o,t,!1,null,null,null);e["default"]=b.exports,u()(b,"components",{QPage:l["a"],QBtn:p["a"]})}}]);

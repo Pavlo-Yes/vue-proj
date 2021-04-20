@@ -199,7 +199,7 @@ export default {
                 this.$setTokens(access, refresh);
                 this.$axiosCheckAccessToken()
                   .then(res => {
-                    console.log('second scenario');
+                    // console.log('second scenario');
                     this.$setCurrentUser(res.data);
                     this.currentUser = res.data;
                   })
