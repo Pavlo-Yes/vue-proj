@@ -111,7 +111,7 @@
       </q-tabs>
       <div style="height: 40vh" class="text-amber-8 bg-blue-grey-9 row justify-center items-start">
         <q-btn v-if="this.currentUser && this.currentUser.is_superuser">
-          <a href="http://localhost:8000/admin/"
+          <a href="https://pavlodjango.herokuapp.com/admin/"
              class="text-amber-9"
              style="text-decoration: none"
           >

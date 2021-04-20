@@ -77,7 +77,7 @@ export default {
       user.append("username", username);
       user.append("password", password);
       user.append("email", email);
-      this.$axios.post('http://127.0.0.1:8000/auth/register/', user)
+      this.$axios.post('auth/register/', user)
         .then((response) => {
           alert('Thanks for signing in. Now you can login')
           this.$router.push({name: 'login'})
