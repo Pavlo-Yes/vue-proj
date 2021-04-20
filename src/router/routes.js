@@ -10,7 +10,7 @@ const routes = [
       {path: 'about', component: () => import('pages/About')},
       {path: 'blog', component: () => import('pages/Blog')},
       {path: 'inspiration', component: () => import('pages/Inspiration')},
-      {path: '/cart', name: 'cart', component: () => import('pages/Cart')},
+      {path: 'cart', name: 'cart', component: () => import('pages/Cart')},
       {path: 'product/:id', component: () => import('pages/SingleProduct')},
     ]
   },
